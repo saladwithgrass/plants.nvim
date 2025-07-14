@@ -12,13 +12,13 @@ M.set_variant = function(opts)
 
   nvim_set_hl(
     'WinSeparator',
-    { fg = colors.orange, bg = colors.base04 },
+    { fg = colors.base0, bg = colors.base04 },
     { transparent = config.transparent.enabled }
   )
-  nvim_set_hl('FloatBorder', { fg = colors.orange, bg = colors.base04 }, {
+  nvim_set_hl('FloatBorder', { fg = colors.base0, bg = colors.base04 }, {
     transparent = config.transparent.enabled,
   })
-  nvim_set_hl('FloatTitle', { fg = colors.mix_blue, bg = colors.blue })
+  nvim_set_hl('FloatTitle', { fg = colors.base04, bg = colors.base4 })
   nvim_set_hl(
     'SignColumn',
     { fg = colors.base1, bg = colors.base02 },
@@ -39,19 +39,19 @@ M.set_variant = function(opts)
   -- Property, Parameter, TagAttribute, TagDelimiter <-- custom
   nvim_set_hl('Comment', { fg = colors.base00 }, { styles = config.styles.comments })
   nvim_set_hl('Constant', { fg = colors.violet }, { styles = config.styles.constants })
-  nvim_set_hl('String', { fg = colors.cyan }, { styles = config.styles.strings })
+  nvim_set_hl('String', { fg = colors.green }, { styles = config.styles.strings })
   nvim_set_hl('Character', { link = 'String' })
   nvim_set_hl('Number', { link = 'Constant' })
   nvim_set_hl('Boolean', { link = 'Constant' })
   nvim_set_hl('Float', { link = 'Constant' })
-  nvim_set_hl('Identifier', { fg = colors.blue }, { styles = config.styles.variables })
+  nvim_set_hl('Identifier', { fg = colors.base0 }, { styles = config.styles.variables })
   nvim_set_hl('Property', { fg = colors.blue }, { styles = config.styles.variables })
   nvim_set_hl(
     'Parameter',
     { fg = colors.blue, italic = true },
     { styles = config.styles.variables }
   )
-  nvim_set_hl('Function', { fg = colors.blue }, { styles = config.styles.functions })
+  nvim_set_hl('Function', { fg = colors.grellow }, { styles = config.styles.functions })
   nvim_set_hl('Statement', { fg = colors.green }, { styles = config.styles.statements })
   nvim_set_hl('Conditional', { link = 'Statement' })
   nvim_set_hl('Repeat', { link = 'Statement' })
