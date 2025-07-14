@@ -1,4 +1,4 @@
----@class solarized.palette
+---@class plants.palette
 ---@field base0? string
 ---@field base00? string
 ---@field base01? string
@@ -39,8 +39,8 @@
 
 local M = {}
 
----@type solarized.palette
-M.solarized = {
+---@type plants.palette
+M.plants = {
   base04        = '#252a22',
   base03        = '#2b3227',
   base02        = '#323a2e',
@@ -60,13 +60,13 @@ M.solarized = {
   cyan          = '#54f4f2',
   orange        = '#f7c566',
   violet        = '#967cdb',
-  diag_error    = '#DC322F',
-  diag_hint     = '#5b97cb',
-  diag_info     = '#5b97cb',
-  diag_ok       = '#6cffaf',
-  diag_warning  = '#dbce5e',
-  git_add       = '#6cffaf',
-  git_delete    = '#DC322F',
+  diag_error    = '#f76866',
+  diag_hint     = '#89c1f0',
+  diag_info     = '#89c1f0',
+  diag_ok       = '#94f763',
+  diag_warning  = '#f7c566',
+  git_add       = '#94f763',
+  git_delete    = '#f76866',
   git_modify    = '#dbce5e',
   mix_red       = '#56444a',
   mix_green     = '#426148',
@@ -76,7 +76,7 @@ M.solarized = {
   mix_cyan      = '#1e6569',
   mix_orange    = '#525248',
   mix_violet    = '#3f5278',
-  mix_base1     = '#486B74',
+  mix_base1     = '#488B74',
   mix_base01    = '#CACBBC',
 }
 

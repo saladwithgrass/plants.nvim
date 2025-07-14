@@ -1,4 +1,4 @@
----@class solarized.transparent
+---@class plants.transparent
 ---@field normal? boolean
 ---@field normalfloat? boolean
 ---@field pmenu? boolean
@@ -10,7 +10,7 @@
 ---@field mason? boolean
 ---@field enabled? boolean
 
----@class solarized.styles
+---@class plants.styles
 ---@field enabled? boolean
 ---@field types? vim.api.keyset.highlight
 ---@field functions? vim.api.keyset.highlight
@@ -22,7 +22,7 @@
 ---@field constants? vim.api.keyset.highlight
 ---@field statements? vim.api.keyset.highlight
 
----@class solarized.plugins
+---@class plants.plugins
 ---@field treesitter? boolean
 ---@field lspconfig? boolean
 ---@field navic? boolean
@@ -56,18 +56,18 @@
 ---@field mason? boolean
 ---@field flash? boolean
 
----@class solarized.error_lens
+---@class plants.error_lens
 ---@field text? boolean
 ---@field symbol? boolean
 
----@class solarized.config
----@field transparent? solarized.transparent
----@field on_highlights? fun(colors: solarized.palette, color: solarized.color): solarized.highlights
----@field on_colors? fun(colors: solarized.palette, color: solarized.color): solarized.palette
----@field styles? solarized.styles
----@field palette? "solarized" | "selenized"
----@field plugins? solarized.plugins
----@field error_lens? solarized.error_lens
+---@class plants.config
+---@field transparent? plants.transparent
+---@field on_highlights? fun(colors: plants.palette, color: plants.color): plants.highlights
+---@field on_colors? fun(colors: plants.palette, color: plants.color): plants.palette
+---@field styles? plants.styles
+---@field palette? "plants" | "selenized"
+---@field plugins? plants.plugins
+---@field error_lens? plants.error_lens
 return {
   transparent = {
     enabled = false,
@@ -83,7 +83,7 @@ return {
   },
   on_highlights = nil,
   on_colors = nil,
-  palette = 'solarized',
+  palette = 'plants',
   error_lens = {
     text = false,
     symbol = false,

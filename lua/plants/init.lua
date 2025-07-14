@@ -1,12 +1,12 @@
----@class solarized
----@field config? solarized.config
----@field setup? fun(config: solarized.config)
+---@class plants
+---@field config? plants.config
+---@field setup? fun(config: plants.config)
 ---@field load? fun()
 
----@type solarized
+---@type plants
 local M = {}
 
-M.config = require 'solarized.config'
+M.config = require 'plants.config'
 
 M.setup = function(config)
   M.config = vim.tbl_deep_extend('force', M.config, config or {})
@@ -34,16 +34,16 @@ M.load = function()
     vim.cmd 'syntax reset'
   end
 
-  vim.g.colors_name = 'solarized'
+  vim.g.colors_name = 'plants'
   local highlights = {}
   local colors = {}
   if vim.o.background == 'dark' then
-    highlights = require 'solarized.highlights'
-    local palette = require 'solarized.palette'
+    highlights = require 'plants.highlights'
+    local palette = require 'plants.palette'
     colors = palette[M.config.palette]
   else
-    highlights = require 'solarized.highlights.solarized-light'
-    local palette = require 'solarized.palette.solarized-light'
+    highlights = require 'plants.highlights.plants-light'
+    local palette = require 'plants.palette.plants-light'
     colors = palette[M.config.palette]
   end
 

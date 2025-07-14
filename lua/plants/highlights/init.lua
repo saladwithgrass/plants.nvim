@@ -10,14 +10,14 @@ local function nvim_get_hl(opts)
   return hl
 end
 
----@class solarized.nvim_set_hl.config
+---@class plants.nvim_set_hl.config
 ---@field transparent? boolean
 ---@field styles? vim.api.keyset.highlight
 ---@field error_lens? boolean
 
 ---@param group_name string
 ---@param group_val vim.api.keyset.highlight
----@param config? solarized.nvim_set_hl.config
+---@param config? plants.nvim_set_hl.config
 local nvim_set_hl = function(group_name, group_val, config)
   local val = { fg = 'NONE', bg = 'NONE' }
 
@@ -31,8 +31,8 @@ local nvim_set_hl = function(group_name, group_val, config)
     end
 
     if config and config.error_lens then
-      local color = require 'solarized.color'
-      local editor = require('solarized.utils').nvim_get_hl 'Normal'
+      local color = require 'plants.color'
+      local editor = require('plants.utils').nvim_get_hl 'Normal'
       local ok, mix_color = pcall(color.blend, group_val.fg, editor.bg, 0.3)
       if ok then
         group_val.bg = mix_color
@@ -48,10 +48,10 @@ local nvim_set_hl = function(group_name, group_val, config)
   end
 end
 
----@param colors solarized.palette
----@param config solarized.config
+---@param colors plants.palette
+---@param config plants.config
 M.set_highlight = function(colors, config)
-  local color = require 'solarized.color'
+  local color = require 'plants.color'
   if config.on_colors then
     colors = vim.tbl_extend('force', colors, config.on_colors(colors, color))
   end
@@ -78,8 +78,8 @@ M.set_highlight = function(colors, config)
     vim.g['terminal_color_' .. index - 1] = colors[key]
   end
 
-  local solarized_dark = require 'solarized.variants'
-  solarized_dark.set_variant {
+  local plants_dark = require 'plants.variants'
+  plants_dark.set_variant {
     colors = colors,
     nvim_set_hl = nvim_set_hl,
     config = config,
@@ -109,7 +109,7 @@ M.set_highlight = function(colors, config)
   --   { fg = colors.base01, bg = colors.base04 },
   --   { transparent = config.transparent.enabled }
   -- )
-  nvim_set_hl('Folded', { fg = colors.base0, bg = colors.base02 })
+  nvim_set_hl('Folded', { fg = colors.base0, bg = colors.base04 })
   nvim_set_hl('FoldColumn', { fg = colors.base0, bg = colors.base04 })
   -- nvim_set_hl(
   --   'SignColumn',
@@ -276,7 +276,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('@tag.delimiter', { link = 'TagDelimiter' })
   end
 
-  local signcolumn = require('solarized.utils').nvim_get_hl 'SignColumn'
+  local signcolumn = require('plants.utils').nvim_get_hl 'SignColumn'
 
   if config.plugins.lspconfig then
     nvim_set_hl('@lsp.type.class', { link = 'Type' })
@@ -497,7 +497,7 @@ M.set_highlight = function(colors, config)
       { fg = colors.base0, bg = colors.base04 },
       { transparent = config.transparent.whichkey and config.transparent.enabled }
     )
-    nvim_set_hl('WhichKey', { link = 'Property' })
+    nvim_set_hl('WhichKey', {fg = colors.base0})
     nvim_set_hl('WhichKeyDesc', { link = 'String' })
     nvim_set_hl('WhichKeySeparator', { link = 'Keyword' })
     nvim_set_hl('WhichKeyGroup', { link = 'Constant' })

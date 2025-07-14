@@ -2,8 +2,8 @@ local command = {}
 
 local subcommands = {
   colors = function(_)
-    local config = require 'solarized.config'
-    local palette = require 'solarized.palette'
+    local config = require 'plants.config'
+    local palette = require 'plants.palette'
     local colors = palette[config.palette]
 
     local buf = vim.api.nvim_create_buf(true, true)
@@ -53,8 +53,8 @@ local subcommands = {
     end
 
     vim.api.nvim_set_option_value('modifiable', false, { buf = buf })
-    vim.api.nvim_set_option_value('filetype', 'Solarized', { buf = buf })
-    vim.api.nvim_buf_set_name(buf, 'Solarized Colors')
+    vim.api.nvim_set_option_value('filetype', 'plants', { buf = buf })
+    vim.api.nvim_buf_set_name(buf, 'plants Colors')
     vim.api.nvim_win_set_buf(0, buf)
   end,
 }

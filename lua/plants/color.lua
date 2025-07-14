@@ -1,4 +1,4 @@
----@class solarized.color
+---@class plants.color
 ---@field hex_to_rgb fun(hex: string): number, number, number
 ---@field rgb_to_hex fun(red: number, green: number, blue: number): string
 ---@field darken fun(hex: string, percentage: number): string

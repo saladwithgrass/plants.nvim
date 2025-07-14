@@ -1,4 +1,4 @@
----@class solarized.highlights
+---@class plants.highlights
 ---@field ColorColumn? vim.api.keyset.highlight
 ---@field Conceal? vim.api.keyset.highlight
 ---@field CurSearch? vim.api.keyset.highlight

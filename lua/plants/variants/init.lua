@@ -1,12 +1,12 @@
 local M = {}
 
----@class solarized_variants.opts
----@field colors solarized.palette
----@field color solarized.color
----@field config solarized.config
----@field nvim_set_hl fun(group_name: string, group_val: vim.api.keyset.highlight, config?: solarized.nvim_set_hl.config)
+---@class plants.opts
+---@field colors plants.palette
+---@field color plants.color
+---@field config plants.config
+---@field nvim_set_hl fun(group_name: string, group_val: vim.api.keyset.highlight, config?: plants.nvim_set_hl.config)
 
----@param opts solarized_variants.opts
+---@param opts plants_variants.opts
 M.set_variant = function(opts)
   local colors, _, config, nvim_set_hl = opts.colors, opts.color, opts.config, opts.nvim_set_hl
 
